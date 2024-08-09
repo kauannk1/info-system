@@ -32,6 +32,19 @@ void pedido_fechado(int sal1, int sal2, int sal3, int sal4, double pSal1, double
     cout << "Total a pagar: R$" << fixed << setprecision(2) << caixa << endl;
 }
 
+void promocao(double sal1, double sal2, double sal3, double caixa){
+	double finalValue, desconto;
+	desconto = caixa * 0.20;
+	finalValue = caixa - desconto;
+	cout << "Voce ganhou um desconto de 20% porque comprou mais de 3 salgados!" << endl;
+	cout << "Seu desconto eh de R$" << desconto << endl;
+	cout << endl;
+	
+	cout << "O valor final do pedido eh R$" << fixed << setprecision(2) << finalValue << endl;
+	
+		
+}
+
 
 int main(){
 	double caixa = 0, pSal1 = 0, pSal2 = 0, pSal3 = 0, pSal4 = 0;
@@ -68,6 +81,12 @@ int main(){
 	  			
 	  			//chamando função
 	  			pedido_fechado(sal1, sal2, sal3, sal4, pSal1, pSal2, pSal3, pSal4, caixa);
+	  			if ((sal1 + sal2 + sal3 + sal4) > 3 ){
+	  				cout << "\n\n!!!! Voce ganhou uma promocao surpresa !!!!\n\n" << endl;
+	  				system("pause");
+	  				system("cls");
+	  				promocao(pSal1, pSal2, pSal3, caixa);
+				  }
 	  			return 0;
 			}
 			
